@@ -1,5 +1,6 @@
 document.getElementById("back-btn")
-.addEventListener("click", function(){
-    window.location.href = "./index.html"
+.addEventListener("click", function(event){
+    event.preventDefault();
+    window.location.href = "./index.html";
     
 })

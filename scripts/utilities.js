@@ -106,7 +106,7 @@ document.getElementById("color-change").addEventListener("click", function(){
 
 document.getElementById("discover-new")
 .addEventListener("click", function(){
-    window.location.href = "./qna.html"
+    window.location.href = "./qna.html";
 })
 
 
