@@ -15,6 +15,19 @@ function interaction(id){
         document.getElementById("task-assigned").innerHTML = decrease;
         document.getElementById("task-completed").innerHTML = increase;
         alert("Board updated successfully");
+
+        // get time
+        const currentTime = new Date().toLocaleTimeString();
+        // get name
+        const taskName = document.getElementById(id).getAttribute('data-task-name');
+
+        document.getElementById("history").innerHTML += 
+        `
+        <p class="p-2 rounded-lg bg-blue-50">
+            You have Completed ${taskName} at ${currentTime};
+        </p>
+        `
+
         if(decrease===0){
             alert("Congratulations you have completed all the availabe task");
         }
@@ -22,6 +35,16 @@ function interaction(id){
         })
 }
 
+
+
+
+
+// document.getElementById("history").innerHTML = 
+// `
+// <p class="p-2 rounded-lg bg-blue-50">
+//     You have Complete The Task Add Dark Mode at 12:48:15 PM
+// </p> 
+// `
 
 function innerHTMLInNumber(id){
     return parseInt(document.getElementById(id).innerHTML);
@@ -77,6 +100,13 @@ function generateRandomColor(){
 
 document.getElementById("color-change").addEventListener("click", function(){
     document.body.style.backgroundColor = generateRandomColor();
+})
+
+
+
+document.getElementById("discover-new")
+.addEventListener("click", function(){
+    window.location.href = "./qna.html"
 })
 
 
