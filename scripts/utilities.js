@@ -37,7 +37,21 @@ interaction("Glassdoor-btn");
 
 // dynamic date
 
+// const date = new Date();
+// date.toLocaleDateString();
+// document.getElementById("date").innerHTML=date;
 
+const today = new Date();
+let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let dayNames = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+let year = today.getFullYear();
+let month = monthNames[today.getMonth()];
+let date = today.getDate();
+let day = dayNames[today.getDay()];
+
+document.getElementById("date").innerText = `${month} ${date}, ${year}`;
+
+document.getElementById("day").innerText = `${day}`;
 
 
 // Clear History
@@ -49,6 +63,21 @@ document.getElementById("clear-btn")
 })
 
 
+
+// bg-color-change
+
+function generateRandomColor(){
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    let randomColor = "rgb(" + r + "," + g + "," + b + ")";
+    return randomColor;
+}
+
+document.getElementById("color-change").addEventListener("click", function(){
+    document.body.style.backgroundColor = generateRandomColor();
+})
 
 
 
